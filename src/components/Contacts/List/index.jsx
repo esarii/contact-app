@@ -10,6 +10,8 @@ function List({ contacts }) {
     );
   });
 
+  console.log(filtered);
+
 
   return (
     <div>
@@ -20,17 +22,27 @@ function List({ contacts }) {
       />
 
       <ul className="list">
+        <li>
+          <h4>Full Name</h4>
+          <h4>Phone Number</h4>
+          <h4>Email Address</h4>
+        </li>
         {
           filtered.map((contact, index) => (
             <li key={index}>
               <span>{contact.fullname}</span>
               <span>{contact.phone_number}</span>
+              <span>{contact.email}</span>
             </li>
           ))
         }
       </ul>
 
-      <p>Total Contacts({filtered.lenght})</p>
+      <p>Total Contacts
+        <strong className='count'>
+          {filtered.length}
+        </strong>
+      </p>
 
     </div>
   );

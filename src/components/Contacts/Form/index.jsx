@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const initialFormValues = { fullname: "", phone_number: "" };
+const initialFormValues = { fullname: "", phone_number: "", email: "" };
 
 function Form({ addContact, contacts }) {
 
@@ -17,7 +17,7 @@ function Form({ addContact, contacts }) {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        if (form.fullname === "" || form.phone_number === "") {
+        if (form.fullname === "" || form.phone_number === "" || form.email === "") {
             return false;
         }
 
@@ -41,8 +41,15 @@ function Form({ addContact, contacts }) {
                     placeholder="Phone Number"
                     onChange={onChangeInput} />
             </div>
+            <div>
+                <input
+                    name="email"
+                    value={form.email}
+                    placeholder="Email"
+                    onChange={onChangeInput} />
+            </div>
             <div className='btn'>
-                <button>Add</button>
+                <button>Add Contact</button>
             </div>
         </form>
     );

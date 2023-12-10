@@ -8,15 +8,18 @@ function Contacts() {
   const [contacts, setContacts] = useState([
     {
       fullname: "Ezgi",
-      phone_number: "123123123"
+      phone_number: "123123123",
+      email: "ezgi@gmail.com"
     },
     {
       fullname: "Gizem",
-      phone_number: "456456456"
+      phone_number: "456456456",
+      email: "gizem@gmail.com"
     },
     {
       fullname: "Ece",
-      phone_number: "789789789"
+      phone_number: "789789789",
+      email: "ece@gmail.com"
     }
   ]);
 
@@ -25,11 +28,16 @@ function Contacts() {
   }, [contacts]);
 
   return (
-    <div id="container">
-      <h1>Contacts</h1>
-      <List contacts={contacts} />
-      <Form addContact={setContacts} contacts={contacts}/>
-    </div>
+    <>
+      <div id='container'>
+      <h1 className='contact-header'>Contacts List App</h1>
+
+        <Form addContact={setContacts} contacts={contacts} />
+      </div>
+      <div className='contact-list'>
+        <List contacts={contacts} />
+      </div>
+    </>
   );
 }
 
